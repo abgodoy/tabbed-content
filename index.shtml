@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<style>
+  /* styling goes here */
+  .custom-tab {
+    border: unset !important;
+    border-top: unset !important;
+  }
+
+  .col-md-2, .col-md-10 {
+    padding: 0;
+  }
+
+  .no-border {
+    border: none !important;
+  }
+
+  .vertical .nav-link:hove {
+    color: #2b2b2b;
+    background-color: #c5c5c5;
+  }
+
+  a.active {
+    background-color: #000 !important;
+
+    color: #fff !important;
+  }
+
+  .vertical .nav-link {
+    transition: background-color .6s
+  }
+
+  .nav-link {
+    text-align: center;
+    color: #000
+  }
+
+  .underline {
+    width: 0;
+    height: 1px;
+    background: blue;
+    transition: width .2s;
+  }
+
+  .tab-content {
+    border: 1px solid #c5c5c5 !important;
+    padding: 15px !important;
+  }
+
+  a.animate-line {
+    position: relative;
+  }
+
+  a.animate-line:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    transform: scale(0);
+    margin: auto;
+    transition: all 0.2s ease;
+  }
+
+  a.animate-line:hover:before {
+    color: #fff;
+    visibility: visible;
+    transform: scaleX(1)
+  }
+
+  .accessible-tabs {
+    margin-top: 50px;
+  }
+
+  .underline:hover {
+    width: 100%;
+  }
+
+    @media screen and (max-width: 845px) {
+      .nav-link {
+        text-align: center;
+      }
+    }
+  }
+</style>
+
+<body>
+  <div class="container">
+    <h1>Tabbed Content</h1>
+
+    <section class="horizontal">
+      <h2>Horizontal</h2>
+      <ul class="nav flex-row" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+        </li>
+      </ul>
+      <div tabindex="0" class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <p>Home Tab</p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised
+          in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <p>Profile Tab</p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+          an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+          1960s
+          with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <p>Contact Tab</p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+          an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+          1960s
+          with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+      </div>
+    </section>
+    <hr />
+    <section class="vertical">
+      <h2>Vertical</h2>
+      <div class="row">
+        <div class="col-md-2">
+          <ul class="nav nav-pills no-border flex-column" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link no-border animate-line active" id="home-tab-vertical" data-toggle="tab" href="#vertical-home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link no-border animate-line" id="profile-tab-vertical" data-toggle="tab" href="#vertical-profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link no-border animate-line" id="contact-tab-vertical" data-toggle="tab" href="#vertical-contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+              <div class="underline"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-10">
+          <div tabindex="0" class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="vertical-home" role="tabpanel" aria-labelledby="home-tab-vertical">
+              Content of Home<br><br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+              1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+              popularised
+              in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+            <div class="tab-pane fade" id="vertical-profile" role="tabpanel" aria-label="profile tab content">
+              <h3>Profile This</h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+              an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+              1960s
+              with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+            <div class="tab-pane fade" id="vertical-contact" role="tabpanel" aria-labelledby="contact-tab-vertical">
+              <h3>Contact Us</h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+              an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+              1960s
+              with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+    //
+	//<![CDATA[
+$(function(){
+  var hash = window.location.hash;
+  hash && $('ul.nav a[href="' + hash + '"]').tab('show');  //OG
+
+  $('.nav-tabs a').click(function (e) {
+    $(this).tab('show');
+    var scrollmem = $('body').scrollTop() || $('html').scrollTop();
+    window.location.hash = this.hash;
+    $('html,body').scrollTop(scrollmem);
+  });
+
+});
+// ]]>
+</script>
+
+</html>

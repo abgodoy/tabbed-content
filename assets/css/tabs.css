@@ -1,0 +1,151 @@
+.tab-content-pane {
+  height: 550px;
+  border: 1px solid #c5c5c5 !important;
+  padding: 15px !important;
+  overflow-y: scroll;
+}
+
+/* for vertical tabbed content */
+.left-pane,
+.right-pane {
+  padding: 0;
+}
+
+.accessible-tabs {
+  margin-top: 50px;
+}
+
+.bt {
+  /* padding: 10px; */
+}
+
+.bt-horizontal {
+  transition: all .3s;
+}
+
+.bt-horizontal:hover {
+  border-right: 3px solid #01426a;
+  border-left: 3px solid #01426a;
+  border-top: 3px solid #01426a;
+  margin-top: -3px;
+}
+
+.bt-horizontal:focus {
+  border-right: 3px solid #01426a;
+  border-left: 3px solid #01426a;
+  border-top: 3px solid #01426a;
+  margin-top: -3px;
+}
+
+
+.bt-vertical:hover {
+  border-right: 5px solid #01426a;
+  border-left: 5px solid #01426a;
+}
+
+.bt-vertical {
+  transition: all .25s;
+}
+
+
+/* FROM THE W3C SITE FOR TABBED CONTENT */
+[role="tablist"] {
+  margin: 0 0 -0.1em;
+  overflow: visible;
+}
+
+[role="tab"] {
+  position: relative;
+  margin: 0;
+  padding: 0.3em 0.5em 0.4em;
+  border: 1px solid hsl(219, 1%, 72%);
+  box-shadow: 0 0 0.2em hsl(219, 1%, 72%);
+  overflow: visible;
+  font-family: inherit;
+  font-size: inherit;
+  background: #fff;
+  color: #01426a;
+}
+
+[role="tab"]:hover::before,
+[role="tab"]:focus::before,
+[role="tab"][aria-selected="true"]::before {
+  position: absolute;
+  bottom: 100%;
+  right: -1px;
+  left: -1px;
+  border-radius: 0.2em 0.2em 0 0;
+  content: '';
+}
+
+[role="tab"][aria-selected="true"] {
+  border-radius: 0;
+  background: hsl(220, 43%, 99%);
+  background: #01426a;
+  outline: 0;
+  color: yellow;
+}
+
+/* [role="tab"][aria-selected="true"]:not(:focus):not(:hover)::before {
+  color: yellow;
+} */
+
+[role="tab"][aria-selected="true"]::after {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  left: 0;
+  background: hsl(220, 43%, 99%);
+  box-shadow: none;
+  content: '';
+}
+
+[role="tab"]:hover,
+[role="tab"]:focus,
+[role="tab"]:active {
+  outline: 0;
+  border-radius: 0;
+}
+
+[role="tab"]:hover::before,
+[role="tab"]:focus::before {
+  border-color: hsl(20, 96%, 48%);
+  color: #01426a
+}
+
+/* TAB PANELS */
+
+[role="tabpanel"] {
+  position: relative;
+  z-index: 2;
+  padding: 0.5em 0.5em 0.7em;
+  border: 1px solid hsl(219, 1%, 72%);
+  border-radius: 0 0.2em 0.2em 0.2em;
+  box-shadow: 0 0 0.2em hsl(219, 1%, 72%);
+  background: hsl(220, 43%, 99%);
+}
+
+[role="tabpanel"]:focus {
+  border-color: hsl(20, 96%, 48%);
+  box-shadow: 0 0 0.2em hsl(20, 96%, 48%);
+  outline: 0;
+  opacity: 1;
+  transition: opacity 3s;
+}
+
+[role="tabpanel"]:focus::after {
+  position: absolute;
+  bottom: 0;
+  right: -1px;
+  left: -1px;
+  border-radius: 0 0 0.2em 0.2em;
+  content: '';
+}
+
+[role="tabpanel"] p {
+  margin: 0;
+}
+
+[role="tabpanel"] * + p {
+  margin-top: 1em;
+}
